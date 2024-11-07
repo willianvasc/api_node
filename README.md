@@ -19,20 +19,6 @@ O formulário de contato coleta informações do usuário e envia para o backend
    cd <NOME_DA_PASTA_DO_PROJETO>
 
 
-2. **Construir as imagens Docker**:
-   Utilize o Docker Compose para construir as imagens.
-
-   ```bash
-   docker-compose build
-   ```
-
-3. **Rodar a aplicação**:
-   Após construir as imagens, você pode rodar o projeto com o seguinte comando:
-
-   ```bash
-   docker-compose up
-   ```
-
    Isso irá iniciar os containers do Docker e a aplicação estará rodando.
 
 ## Dependências do projeto
@@ -78,7 +64,19 @@ Antes de rodar o projeto, você precisará instalar algumas dependências utiliz
    ```bash
    yarn add mysql2
    ```
+6. **Construir as imagens Docker**:
+   Utilize o Docker Compose para construir as imagens.
 
+   ```bash
+   docker-compose build
+   ```
+
+7. **Rodar a aplicação**:
+   Após construir as imagens, você pode rodar o projeto com o seguinte comando:
+
+   ```bash
+   docker-compose up
+   ```
 ## Estrutura do projeto
 
 - **Frontend**: Contém o formulário de contato desenvolvido com **Bootstrap**, **HTML** e **jQuery**.
