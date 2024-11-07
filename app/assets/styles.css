@@ -1,0 +1,13 @@
+.container-principal{
+    width: 100%;
+    min-height: 94.1vh;
+}
+
+.ql-toolbar.ql-snow+.ql-container.ql-snow {
+    border-radius: 0px 0px 10px 10px;
+    border-width: 1px !important;
+    border-top: 1px !important;
+}
+#editor{
+    height: 200px;
+}

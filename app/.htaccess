@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+# Redireciona automaticamente URLs sem a extensão .html para o arquivo .html correspondente
+RewriteRule ^(.*[^/])$ $1.html [L]

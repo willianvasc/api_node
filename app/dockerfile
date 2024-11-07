@@ -1,0 +1,15 @@
+# Use uma imagem base do Apache
+FROM httpd:alpine
+
+# Copiar os arquivos HTML para o diretório do Apache
+COPY ./ /usr/local/apache2/htdocs/
+
+# Copiar um arquivo de configuração customizado para o Apache (se necessário)
+COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
+
+
+RUN echo '<Directory "/usr/local/apache2/htdocs"> AllowOverride All </Directory>' >> /usr/local/apache2/conf/httpd.conf
+
+
+# Expor a porta 80 para acessar a aplicação
+EXPOSE 80

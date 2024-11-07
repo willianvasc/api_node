@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: back/dockerfile
+    container_name: node-app-container
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./back:/app
+    depends_on:
+      - mysql
+      - apache
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: mydatabase
+    command: yarn start
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    ports:
+      - "3307:3306"  # Usando uma porta alternativa para evitar conflito
+    environment:
+      MYSQL_ROOT_PASSWORD: admin  # Senha do usuário root
+      MYSQL_DATABASE: mydatabase  # Criando um banco de dados
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persistindo dados
+    restart: always
+
+  apache:
+    image: httpd:latest
+    container_name: apache-container
+    ports:
+      - "80:80"  # Mapeando a porta 80 para acessar os arquivos HTML
+    volumes:
+      - ./app:/usr/local/apache2/htdocs/  # Diretório onde o Apache serve os arquivos HTML
+    restart: always
+
+volumes:
+  mysql_data:
