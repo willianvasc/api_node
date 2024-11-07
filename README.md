@@ -1,6 +1,6 @@
 Claro! Aqui está o conteúdo em formato de `README.md`:
 
-```markdown
+
 # Formulário de Contato
 
 Este é um projeto simples de formulário de contato, onde o frontend foi desenvolvido utilizando **Bootstrap**, **HTML** e **jQuery**, enquanto o backend é uma aplicação **Node.js** que salva as informações de contato em um banco de dados **MySQL**.
@@ -17,7 +17,7 @@ O formulário de contato coleta informações do usuário e envia para o backend
    ```bash
    git clone <URL_DO_REPOSITORIO>
    cd <NOME_DA_PASTA_DO_PROJETO>
-   ```
+
 
 2. **Construir as imagens Docker**:
    Utilize o Docker Compose para construir as imagens.
